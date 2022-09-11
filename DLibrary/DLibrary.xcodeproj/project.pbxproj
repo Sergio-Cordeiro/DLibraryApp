@@ -17,6 +17,7 @@
 		D11D53C828CD56B9009162B1 /* DLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53C728CD56B9009162B1 /* DLibraryTests.swift */; };
 		D11D53D228CD56B9009162B1 /* DLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53D128CD56B9009162B1 /* DLibraryUITests.swift */; };
 		D11D53D428CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53D328CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift */; };
+		D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53E528CD6212009162B1 /* UICornerableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D11D53CD28CD56B9009162B1 /* DLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11D53D128CD56B9009162B1 /* DLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibraryUITests.swift; sourceTree = "<group>"; };
 		D11D53D328CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D11D53E528CD6212009162B1 /* UICornerableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		D11D53E128CD5A23009162B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D11D53E428CD61EC009162B1 /* UIExtensions */,
 				D11D53BB28CD56B8009162B1 /* LaunchScreen.storyboard */,
 				D11D53B328CD56B1009162B1 /* Main.storyboard */,
 			);
@@ -160,6 +163,14 @@
 				D11D53B928CD56B8009162B1 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D11D53E428CD61EC009162B1 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D11D53E528CD6212009162B1 /* UICornerableView.swift */,
+			);
+			path = UIExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11D53B228CD56B1009162B1 /* ViewController.swift in Sources */,
+				D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */,
 				D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */,
 				D11D53B828CD56B1009162B1 /* DLibrary.xcdatamodeld in Sources */,
 				D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */,
