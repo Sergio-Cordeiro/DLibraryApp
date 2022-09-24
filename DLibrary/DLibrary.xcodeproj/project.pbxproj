@@ -18,6 +18,7 @@
 		D11D53D228CD56B9009162B1 /* DLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53D128CD56B9009162B1 /* DLibraryUITests.swift */; };
 		D11D53D428CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53D328CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift */; };
 		D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53E528CD6212009162B1 /* UICornerableView.swift */; };
+		D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D11D53D128CD56B9009162B1 /* DLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibraryUITests.swift; sourceTree = "<group>"; };
 		D11D53D328CD56B9009162B1 /* DLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D11D53E528CD6212009162B1 /* UICornerableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableView.swift; sourceTree = "<group>"; };
+		D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D11D53BE28CD56B8009162B1 /* Info.plist */,
+				D13D2BDB28DF347200EBE03F /* Provider */,
 				D11D53E328CD5A3C009162B1 /* Resources */,
 				D11D53E228CD5A29009162B1 /* Model */,
 				D11D53E128CD5A23009162B1 /* View */,
@@ -169,8 +172,16 @@
 			isa = PBXGroup;
 			children = (
 				D11D53E528CD6212009162B1 /* UICornerableView.swift */,
+				D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */,
 			);
 			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		D13D2BDB28DF347200EBE03F /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 			files = (
 				D11D53B228CD56B1009162B1 /* ViewController.swift in Sources */,
 				D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */,
+				D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */,
 				D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */,
 				D11D53B828CD56B1009162B1 /* DLibrary.xcdatamodeld in Sources */,
 				D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */,

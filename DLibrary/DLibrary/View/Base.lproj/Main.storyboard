@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,22 +18,106 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZh-eQ-ZJk" customClass="UICornerableView" customModule="DLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="423" width="414" height="473"/>
+                                <rect key="frame" x="0.0" y="427" width="414" height="469"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af5-DG-sOQ" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="220" width="300" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="i79-aD-Jse"/>
+                                            <constraint firstAttribute="height" constant="60" id="zfo-AD-fzd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Meus Livros Salvos">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="YMT-3M-yxV" kind="show" id="wdT-hb-lMw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-rX-DHz" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
+                                        <rect key="frame" x="54.5" y="100" width="305" height="60"/>
+                                        <color key="backgroundColor" red="0.2890195847" green="0.64470970630000002" blue="0.92017859219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Dee-rQ-2fV"/>
+                                            <constraint firstAttribute="height" constant="60" id="SpD-UF-XhG"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Buscar novos livros">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="oXg-mg-qIX" kind="show" id="nfX-kP-m24"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="af5-DG-sOQ" firstAttribute="centerX" secondItem="OZh-eQ-ZJk" secondAttribute="centerX" id="0PS-Ha-LyT"/>
+                                    <constraint firstItem="af5-DG-sOQ" firstAttribute="top" secondItem="COQ-rX-DHz" secondAttribute="bottom" constant="60" id="28n-pf-7CY"/>
+                                    <constraint firstItem="COQ-rX-DHz" firstAttribute="centerX" secondItem="OZh-eQ-ZJk" secondAttribute="centerX" id="UWO-sX-V1j"/>
+                                    <constraint firstItem="COQ-rX-DHz" firstAttribute="top" secondItem="OZh-eQ-ZJk" secondAttribute="top" constant="100" id="htG-mu-JFA"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DLibrary-logo" translatesAutoresizingMaskIntoConstraints="NO" id="coB-2b-A9H">
+                                <rect key="frame" x="124" y="198" width="166" height="166.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seja bem vindo a sua biblioteca virtual" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQz-3p-d1K">
+                                <rect key="frame" x="50" y="68" width="314" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using: Google Books API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC6-GZ-G7R">
+                                <rect key="frame" x="100" y="108.5" width="214" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2890195847" green="0.64470970630000002" blue="0.92017859219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pQz-3p-d1K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1If-sG-Y8N"/>
                             <constraint firstItem="OZh-eQ-ZJk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CY7-1P-oBn"/>
+                            <constraint firstItem="coB-2b-A9H" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ibo-P1-huF"/>
+                            <constraint firstItem="pQz-3p-d1K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="LyL-dV-aUP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pQz-3p-d1K" secondAttribute="trailing" constant="50" id="NkL-z9-H7d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OZh-eQ-ZJk" secondAttribute="bottom" constant="-34" id="bSw-Xi-hrt"/>
                             <constraint firstItem="OZh-eQ-ZJk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="379" id="cTZ-3q-Zip"/>
+                            <constraint firstItem="eC6-GZ-G7R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="cdp-cU-D33"/>
+                            <constraint firstItem="coB-2b-A9H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="edl-RV-zCP"/>
+                            <constraint firstItem="coB-2b-A9H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="i9y-3P-5eJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OZh-eQ-ZJk" secondAttribute="bottom" constant="-34" id="jIW-X4-Gv8"/>
+                            <constraint firstItem="eC6-GZ-G7R" firstAttribute="top" secondItem="pQz-3p-d1K" secondAttribute="bottom" constant="20" id="svx-Ce-BV5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eC6-GZ-G7R" secondAttribute="trailing" constant="100" id="tLo-NX-aTk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OZh-eQ-ZJk" secondAttribute="trailing" id="vBx-Jh-tzw"/>
                         </constraints>
                     </view>
@@ -42,8 +126,124 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lcJ-2B-NYt">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="oXg-mg-qIX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vdj-0L-ijb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-w0-NBh" customClass="UICornerableView" customModule="DLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="210.5" width="414" height="685.5"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-tz-Wth">
+                                        <rect key="frame" x="20" y="20" width="374" height="645.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XFr-tz-Wth" firstAttribute="leading" secondItem="LyX-w0-NBh" secondAttribute="leading" constant="20" id="7oZ-HF-cOc"/>
+                                    <constraint firstItem="XFr-tz-Wth" firstAttribute="top" secondItem="LyX-w0-NBh" secondAttribute="top" constant="20" id="BlM-4S-sbn"/>
+                                    <constraint firstAttribute="bottom" secondItem="XFr-tz-Wth" secondAttribute="bottom" constant="20" id="HOC-qQ-Par"/>
+                                    <constraint firstAttribute="trailing" secondItem="XFr-tz-Wth" secondAttribute="trailing" constant="20" id="t5i-F2-1Wu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: Star Trek O retorno do Capitão Kirk" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EUP-5u-41Z">
+                                <rect key="frame" x="20" y="122" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual o livro deseja buscar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzx-Ev-OYU">
+                                <rect key="frame" x="50" y="68" width="314" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-3S-MU4">
+                                <rect key="frame" x="345" y="165.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buscar apenas livros gratuitos no Google:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9M-dd-FIi">
+                                <rect key="frame" x="20" y="171" width="315" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CX-o1-v1N">
+                                <rect key="frame" x="5" y="30" width="68" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="&lt; Voltar"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B1g-2X-wTD"/>
+                        <color key="backgroundColor" red="0.2890195847" green="0.64470970630000002" blue="0.92017859219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LyX-w0-NBh" firstAttribute="trailing" secondItem="B1g-2X-wTD" secondAttribute="trailing" id="3HQ-yd-ke4"/>
+                            <constraint firstItem="Mzx-Ev-OYU" firstAttribute="top" secondItem="B1g-2X-wTD" secondAttribute="top" constant="20" id="4bf-kz-4ZV"/>
+                            <constraint firstItem="EUP-5u-41Z" firstAttribute="leading" secondItem="B1g-2X-wTD" secondAttribute="leading" constant="20" id="81x-jS-O4b"/>
+                            <constraint firstItem="Mzx-Ev-OYU" firstAttribute="centerX" secondItem="B1g-2X-wTD" secondAttribute="centerX" id="D8F-KU-QyR"/>
+                            <constraint firstItem="HFY-3S-MU4" firstAttribute="leading" secondItem="S9M-dd-FIi" secondAttribute="trailing" constant="10" id="NAK-wt-erA"/>
+                            <constraint firstItem="B1g-2X-wTD" firstAttribute="trailing" secondItem="HFY-3S-MU4" secondAttribute="trailing" constant="20" id="NAo-QK-2te"/>
+                            <constraint firstItem="5CX-o1-v1N" firstAttribute="leading" secondItem="B1g-2X-wTD" secondAttribute="leading" constant="5" id="T4a-wy-k7C"/>
+                            <constraint firstItem="Mzx-Ev-OYU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B1g-2X-wTD" secondAttribute="leading" id="WQ3-VE-yot"/>
+                            <constraint firstItem="S9M-dd-FIi" firstAttribute="top" secondItem="EUP-5u-41Z" secondAttribute="bottom" constant="15" id="Wdq-HT-Hsu"/>
+                            <constraint firstItem="S9M-dd-FIi" firstAttribute="leading" secondItem="B1g-2X-wTD" secondAttribute="leading" constant="20" id="bS5-34-gAz"/>
+                            <constraint firstItem="5CX-o1-v1N" firstAttribute="top" secondItem="vdj-0L-ijb" secondAttribute="top" constant="30" id="ccF-3R-1n4"/>
+                            <constraint firstItem="B1g-2X-wTD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5CX-o1-v1N" secondAttribute="trailing" symbolic="YES" id="cdx-9p-ivJ"/>
+                            <constraint firstItem="B1g-2X-wTD" firstAttribute="trailing" secondItem="EUP-5u-41Z" secondAttribute="trailing" constant="20" id="gbw-ul-PoF"/>
+                            <constraint firstItem="EUP-5u-41Z" firstAttribute="top" secondItem="Mzx-Ev-OYU" secondAttribute="bottom" constant="30" id="m0F-3z-1CN"/>
+                            <constraint firstAttribute="bottom" secondItem="LyX-w0-NBh" secondAttribute="bottom" id="t3I-S1-1Ua"/>
+                            <constraint firstItem="LyX-w0-NBh" firstAttribute="leading" secondItem="B1g-2X-wTD" secondAttribute="leading" id="v2O-LK-0i1"/>
+                            <constraint firstItem="HFY-3S-MU4" firstAttribute="centerY" secondItem="S9M-dd-FIi" secondAttribute="centerY" id="vfP-gH-PIJ"/>
+                            <constraint firstItem="LyX-w0-NBh" firstAttribute="top" secondItem="S9M-dd-FIi" secondAttribute="bottom" constant="20" id="x5p-Np-gOD"/>
+                            <constraint firstItem="B1g-2X-wTD" firstAttribute="trailing" secondItem="Mzx-Ev-OYU" secondAttribute="trailing" constant="50" id="xJo-GV-JEX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fzo-pE-Esn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maC-FZ-O3l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="109.82142857142857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OhL-pw-wNQ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="YMT-3M-yxV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="80T-Qv-kBu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teste livros salvos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRs-cJ-GOv">
+                                <rect key="frame" x="139.5" y="361" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4ZY-Ky-hqW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sRs-cJ-GOv" firstAttribute="centerX" secondItem="80T-Qv-kBu" secondAttribute="centerX" id="RZr-JY-pib"/>
+                            <constraint firstItem="sRs-cJ-GOv" firstAttribute="top" secondItem="4ZY-Ky-hqW" secondAttribute="top" constant="313" id="bR6-GZ-76C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t9A-0t-a9q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8m-2V-vKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="854"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DLibrary-logo" width="166.5" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
