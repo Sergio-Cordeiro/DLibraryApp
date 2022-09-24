@@ -21,6 +21,7 @@
 		D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */; };
 		D15AE3EB28DF6913006FC18B /* SearchBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EA28DF6913006FC18B /* SearchBooksViewController.swift */; };
 		D15AE3ED28DF76E1006FC18B /* GoogleBooksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EC28DF76E0006FC18B /* GoogleBooksProvider.swift */; };
+		D15AE3EF28DF9285006FC18B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EE28DF9285006FC18B /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableButton.swift; sourceTree = "<group>"; };
 		D15AE3EA28DF6913006FC18B /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
 		D15AE3EC28DF76E0006FC18B /* GoogleBooksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksProvider.swift; sourceTree = "<group>"; };
+		D15AE3EE28DF9285006FC18B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		D11D53E228CD5A29009162B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D15AE3EE28DF9285006FC18B /* Book.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				D15AE3ED28DF76E1006FC18B /* GoogleBooksProvider.swift in Sources */,
 				D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */,
 				D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */,
+				D15AE3EF28DF9285006FC18B /* Book.swift in Sources */,
 				D11D53B828CD56B1009162B1 /* DLibrary.xcdatamodeld in Sources */,
 				D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */,
 				D15AE3EB28DF6913006FC18B /* SearchBooksViewController.swift in Sources */,

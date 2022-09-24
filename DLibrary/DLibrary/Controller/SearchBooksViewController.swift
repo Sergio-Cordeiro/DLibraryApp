@@ -22,14 +22,13 @@ class SearchBooksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadBooks()
      
     }
 
     //MARK: - Outlets Actions
     
     @IBAction func searchForFreeBooksAction(_ sender: Any) {
-        
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -38,5 +37,49 @@ class SearchBooksViewController: UIViewController {
     
     //MARK: - Public methods
     
-    //MARK: - Provate methods
+    //MARK: - Private methods
+    
+    private func loadBooks() {
+        GoogleBooksProvider.getAllBooks { success,data in
+            if success, data != nil {
+                if let data = data {
+                    self.readBooksInJson(data: data)
+                } else {
+                    self.showErrorWhenLoadBooks()
+                }
+            } else {
+                self.showErrorWhenLoadBooks()
+            }
+        }
+    }
+    
+    private func readBooksInJson(data: Data) -> [Book] {
+        var arrayBooks: [Book] = []
+        
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return arrayBooks }
+            guard let items = json["items"] as? [Dictionary<AnyHashable, Any>] else { return arrayBooks }
+            for item in items {
+                if let value = item["volumeInfo"] as? [String : Any],
+                   let id = item["id"] as? String {
+                    if let book = Book.byDict(dict: value, id: id) {
+                        arrayBooks.append(book)
+                    }
+                }
+            }
+        } catch {
+            showErrorWhenLoadBooks()
+        }
+         return arrayBooks
+    }
+    
+    private func showErrorWhenLoadBooks() {
+        let alert = UIAlertController(title: "Algo deu errado...", message: "Por favor tente novamento mais tarde", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok!", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
 }
