@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  DLibrary
 //
 //  Created by Sergio Cordeiro on 10/09/22.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
