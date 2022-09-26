@@ -140,6 +140,57 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-tz-Wth">
                                         <rect key="frame" x="20" y="20" width="374" height="645.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="RrE-0y-H9j" customClass="SearchBooksTableViewCell" customModule="DLibrary" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="374" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RrE-0y-H9j" id="41w-5g-z99">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ack-s0-LaG">
+                                                            <rect key="frame" x="5" y="5" width="364" height="90"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-oh-T3F">
+                                                                    <rect key="frame" x="5" y="10" width="104" height="70"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="169" id="0hw-o5-zRr"/>
+                                                                        <constraint firstAttribute="width" constant="128" id="B2B-kS-DQX"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="FIQ-AK-Fob"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rt-Xv-yP7">
+                                                                    <rect key="frame" x="117" y="34.5" width="0.0" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="7Rt-Xv-yP7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RCH-oh-T3F" secondAttribute="trailing" constant="8" symbolic="YES" id="BUa-wu-jSS"/>
+                                                                <constraint firstItem="RCH-oh-T3F" firstAttribute="top" secondItem="Ack-s0-LaG" secondAttribute="top" constant="10" id="D9l-bi-OWj"/>
+                                                                <constraint firstAttribute="bottom" secondItem="RCH-oh-T3F" secondAttribute="bottom" constant="10" id="Euv-LY-KVO"/>
+                                                                <constraint firstAttribute="trailing" secondItem="7Rt-Xv-yP7" secondAttribute="trailing" constant="247" id="FD4-Iq-d0H"/>
+                                                                <constraint firstItem="RCH-oh-T3F" firstAttribute="leading" secondItem="Ack-s0-LaG" secondAttribute="leading" constant="5" id="jOR-2k-JmC"/>
+                                                                <constraint firstItem="7Rt-Xv-yP7" firstAttribute="centerY" secondItem="RCH-oh-T3F" secondAttribute="centerY" id="tFX-dx-n2u"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Ack-s0-LaG" secondAttribute="bottom" constant="5" id="HsX-bK-7lS"/>
+                                                        <constraint firstItem="Ack-s0-LaG" firstAttribute="leading" secondItem="41w-5g-z99" secondAttribute="leading" constant="5" id="dI5-fd-AeA"/>
+                                                        <constraint firstItem="Ack-s0-LaG" firstAttribute="centerX" secondItem="41w-5g-z99" secondAttribute="centerX" id="s76-AI-FuT"/>
+                                                        <constraint firstItem="Ack-s0-LaG" firstAttribute="top" secondItem="41w-5g-z99" secondAttribute="top" constant="5" id="uVj-Aa-xI8"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="bodyView" destination="Ack-s0-LaG" id="VvS-Mf-lLa"/>
+                                                    <outlet property="bookCoverImage" destination="RCH-oh-T3F" id="neV-m5-JH9"/>
+                                                    <outlet property="nameBookText" destination="7Rt-Xv-yP7" id="tvE-vS-o9Z"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

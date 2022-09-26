@@ -11,6 +11,8 @@ class SearchBooksViewController: UIViewController {
 
     //MARK: - Properties
     
+    private var books: [Book] = []
+    
     //MARK: - Outlets
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -39,11 +41,17 @@ class SearchBooksViewController: UIViewController {
     
     //MARK: - Private methods
     
+    private func downloadImageFromLink(link: String) -> UIImage {
+        
+        
+    }
+    
     private func loadBooks() {
         GoogleBooksProvider.getAllBooks { success,data in
             if success, data != nil {
                 if let data = data {
-                    self.readBooksInJson(data: data)
+                    self.books = self.readBooksInJson(data: data)
+                    self.tableView.reloadData()
                 } else {
                     self.showErrorWhenLoadBooks()
                 }
@@ -82,4 +90,35 @@ class SearchBooksViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+}
+extension SearchBooksViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return books.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as! SearchBooksTableViewCell
+        
+        let book = books[indexPath.row]
+        
+        cell.clipsToBounds = true
+        cell.bodyView.backgroundColor = UIColor.white
+        cell.bodyView.layer.shadowColor = UIColor.black.cgColor
+        cell.bodyView.layer.shadowOpacity = 0.24
+        cell.bodyView.layer.shadowOffset = .zero
+        cell.bodyView.layer.shadowRadius = 3
+        cell.bodyView.layer.cornerRadius = 10
+        if let imageBookLink: String  = book.images["smallThumbnail"] {
+            cell.imageView?.image = downloadImageFromLink(link: imageBookLink)
+        }
+        cell.nameBookText.text = book.title
+        
+        return cell
+        
+    }
+    
+}
+extension SearchBooksViewController: UITableViewDelegate {
+    
 }

@@ -22,6 +22,7 @@
 		D15AE3EB28DF6913006FC18B /* SearchBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EA28DF6913006FC18B /* SearchBooksViewController.swift */; };
 		D15AE3ED28DF76E1006FC18B /* GoogleBooksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EC28DF76E0006FC18B /* GoogleBooksProvider.swift */; };
 		D15AE3EF28DF9285006FC18B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EE28DF9285006FC18B /* Book.swift */; };
+		D15AE3F228E145B8006FC18B /* SearchBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D15AE3EA28DF6913006FC18B /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
 		D15AE3EC28DF76E0006FC18B /* GoogleBooksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksProvider.swift; sourceTree = "<group>"; };
 		D15AE3EE28DF9285006FC18B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		D11D53E028CD5A1A009162B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D15AE3F028E14432006FC18B /* Cells */,
 				D11D53AF28CD56B1009162B1 /* SceneDelegate.swift */,
 				D11D53AD28CD56B1009162B1 /* AppDelegate.swift */,
 				D11D53B128CD56B1009162B1 /* HomeViewController.swift */,
@@ -191,6 +194,14 @@
 				D15AE3EC28DF76E0006FC18B /* GoogleBooksProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		D15AE3F028E14432006FC18B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 			files = (
 				D11D53B228CD56B1009162B1 /* HomeViewController.swift in Sources */,
 				D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */,
+				D15AE3F228E145B8006FC18B /* SearchBooksTableViewCell.swift in Sources */,
 				D15AE3ED28DF76E1006FC18B /* GoogleBooksProvider.swift in Sources */,
 				D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */,
 				D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */,
