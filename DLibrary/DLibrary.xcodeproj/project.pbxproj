@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D111DF7D28E1520700AFD8AE /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = D111DF7C28E1520700AFD8AE /* AlamofireImage */; };
 		D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53AD28CD56B1009162B1 /* AppDelegate.swift */; };
 		D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53AF28CD56B1009162B1 /* SceneDelegate.swift */; };
 		D11D53B228CD56B1009162B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D53B128CD56B1009162B1 /* HomeViewController.swift */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D111DF7D28E1520700AFD8AE /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +222,9 @@
 			dependencies = (
 			);
 			name = DLibrary;
+			packageProductDependencies = (
+				D111DF7C28E1520700AFD8AE /* AlamofireImage */,
+			);
 			productName = DLibrary;
 			productReference = D11D53AA28CD56B1009162B1 /* DLibrary.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +297,9 @@
 				Base,
 			);
 			mainGroup = D11D53A128CD56B1009162B1;
+			packageReferences = (
+				D111DF7B28E1520600AFD8AE /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = D11D53AB28CD56B1009162B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -527,9 +535,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,9 +565,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,6 +698,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D111DF7B28E1520600AFD8AE /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D111DF7C28E1520700AFD8AE /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D111DF7B28E1520600AFD8AE /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D11D53B628CD56B1009162B1 /* DLibrary.xcdatamodeld */ = {

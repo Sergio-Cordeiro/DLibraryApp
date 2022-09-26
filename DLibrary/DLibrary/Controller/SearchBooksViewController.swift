@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class SearchBooksViewController: UIViewController {
 
@@ -19,11 +20,11 @@ class SearchBooksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchforFreeBooksSwith: UISwitch!
     
-    
     //MARK: - overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         loadBooks()
      
     }
@@ -41,17 +42,14 @@ class SearchBooksViewController: UIViewController {
     
     //MARK: - Private methods
     
-    private func downloadImageFromLink(link: String) -> UIImage {
-        
-        
-    }
-    
     private func loadBooks() {
         GoogleBooksProvider.getAllBooks { success,data in
             if success, data != nil {
                 if let data = data {
                     self.books = self.readBooksInJson(data: data)
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 } else {
                     self.showErrorWhenLoadBooks()
                 }
@@ -102,18 +100,44 @@ extension SearchBooksViewController: UITableViewDataSource {
         
         let book = books[indexPath.row]
         
-        cell.clipsToBounds = true
+        if let imageBookLink: String  = book.images["smallThumbnail"] {
+//            UIImageView.af.sharedImageDownloader.imageCache?.removeAllImages()
+            
+            let http = URL(string: imageBookLink)!
+            var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)!
+            comps.scheme = "https"
+            let https = comps.url!
+            
+            cell.imageView?.af.setImage(
+                            withURL: https,
+                            placeholderImage: UIImage(named: "Placeholder Image"),
+                            filter: nil,
+                            imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
+                            runImageTransitionIfCached: false) {
+                                response in
+                                    if response.response != nil {
+                                        self.tableView.beginUpdates()
+                                        self.tableView.endUpdates()
+                                    } else {
+                                        if response.error != nil {
+                                            print(response.error as Any)
+                                            self.tableView.beginUpdates()
+                                            self.tableView.endUpdates()
+                                        }
+                                    }
+                            }
+        }
+        
+        cell.nameBookText.text = book.title
+        
+        cell.clipsToBounds = false
         cell.bodyView.backgroundColor = UIColor.white
         cell.bodyView.layer.shadowColor = UIColor.black.cgColor
         cell.bodyView.layer.shadowOpacity = 0.24
         cell.bodyView.layer.shadowOffset = .zero
         cell.bodyView.layer.shadowRadius = 3
         cell.bodyView.layer.cornerRadius = 10
-        if let imageBookLink: String  = book.images["smallThumbnail"] {
-            cell.imageView?.image = downloadImageFromLink(link: imageBookLink)
-        }
-        cell.nameBookText.text = book.title
-        
+       
         return cell
         
     }
