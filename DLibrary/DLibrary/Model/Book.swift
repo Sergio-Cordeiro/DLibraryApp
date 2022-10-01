@@ -18,7 +18,16 @@ class Book {
     var images: [String: String]
     var previewLink: String
     
-    init(id: String, description: String, title: String, type: String, pagesCount: Int64, language: String, images: [String : String], previewLink: String) {
+    init(
+        id: String,
+        description: String,
+        title: String,
+        type: String,
+        pagesCount: Int64,
+        language: String,
+        images: [String : String],
+        previewLink: String
+    ) {
         self.id = id
         self.description = description
         self.title = title

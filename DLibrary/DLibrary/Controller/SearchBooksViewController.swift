@@ -120,7 +120,6 @@ extension SearchBooksViewController: UITableViewDataSource {
                                         self.tableView.endUpdates()
                                     } else {
                                         if response.error != nil {
-                                            print(response.error as Any)
                                             self.tableView.beginUpdates()
                                             self.tableView.endUpdates()
                                         }
