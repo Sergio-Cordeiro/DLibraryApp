@@ -390,32 +390,61 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-py-7B3">
-                                <rect key="frame" x="20" y="358" width="374" height="223"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-py-7B3" customClass="UICornerableTextView" customModule="DLibrary" customModuleProvider="target">
+                                <rect key="frame" x="20" y="342" width="374" height="420"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-c4-6TD" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
+                                <rect key="frame" x="40" y="787" width="334" height="50"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salvar em Favoritos">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kxp-bq-Vo3"/>
                         <color key="backgroundColor" red="0.29005536440000002" green="0.64257377390000003" blue="0.9209601879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fIq-ea-I8s" secondAttribute="trailing" constant="312" id="8xD-PZ-CJT"/>
                             <constraint firstItem="kxp-bq-Vo3" firstAttribute="trailing" secondItem="SJ6-iO-5RA" secondAttribute="trailing" constant="10" id="AGD-mp-u7c"/>
+                            <constraint firstItem="kxp-bq-Vo3" firstAttribute="trailing" secondItem="Amg-c4-6TD" secondAttribute="trailing" constant="40" id="Cse-fO-N97"/>
                             <constraint firstItem="SJ6-iO-5RA" firstAttribute="baseline" secondItem="fIq-ea-I8s" secondAttribute="baseline" id="Jux-9q-yyH"/>
                             <constraint firstItem="fIq-ea-I8s" firstAttribute="top" secondItem="GAJ-hw-BcE" secondAttribute="top" constant="50" id="Lfz-RS-lJf"/>
                             <constraint firstItem="fIq-ea-I8s" firstAttribute="leading" secondItem="kxp-bq-Vo3" secondAttribute="leading" constant="10" id="N9U-5B-fAj"/>
                             <constraint firstItem="jHa-py-7B3" firstAttribute="leading" secondItem="kxp-bq-Vo3" secondAttribute="leading" constant="20" id="Q5g-vX-xQj"/>
-                            <constraint firstItem="jHa-py-7B3" firstAttribute="top" secondItem="Ily-5S-5c0" secondAttribute="bottom" constant="46" id="Qpz-4W-K6Q"/>
                             <constraint firstItem="Ily-5S-5c0" firstAttribute="leading" secondItem="kxp-bq-Vo3" secondAttribute="leading" constant="20" id="RF5-Ul-akf"/>
                             <constraint firstItem="kxp-bq-Vo3" firstAttribute="trailing" secondItem="Ily-5S-5c0" secondAttribute="trailing" constant="20" id="Sp5-ro-MhQ"/>
                             <constraint firstItem="SJ6-iO-5RA" firstAttribute="centerY" secondItem="fIq-ea-I8s" secondAttribute="centerY" id="ZYm-Ug-gUz"/>
                             <constraint firstItem="Ily-5S-5c0" firstAttribute="top" secondItem="SJ6-iO-5RA" secondAttribute="bottom" constant="30" id="aPl-ze-6Lb"/>
                             <constraint firstAttribute="bottom" secondItem="Ily-5S-5c0" secondAttribute="bottom" constant="584" id="cEo-bB-bWT"/>
+                            <constraint firstItem="Amg-c4-6TD" firstAttribute="top" secondItem="jHa-py-7B3" secondAttribute="bottom" constant="25" id="dOE-Ul-aaP"/>
                             <constraint firstItem="SJ6-iO-5RA" firstAttribute="leading" secondItem="fIq-ea-I8s" secondAttribute="trailing" constant="10" id="fCI-x2-Grw"/>
+                            <constraint firstItem="kxp-bq-Vo3" firstAttribute="bottom" secondItem="Amg-c4-6TD" secondAttribute="bottom" constant="25" id="gcq-SN-mhu"/>
+                            <constraint firstItem="jHa-py-7B3" firstAttribute="top" secondItem="Ily-5S-5c0" secondAttribute="bottom" constant="30" id="hCZ-AH-RiV"/>
                             <constraint firstItem="kxp-bq-Vo3" firstAttribute="trailing" secondItem="jHa-py-7B3" secondAttribute="trailing" constant="20" id="jQv-yr-fOv"/>
+                            <constraint firstItem="kxp-bq-Vo3" firstAttribute="bottom" secondItem="jHa-py-7B3" secondAttribute="bottom" constant="100" id="jYP-Ya-4RT"/>
+                            <constraint firstItem="Amg-c4-6TD" firstAttribute="leading" secondItem="kxp-bq-Vo3" secondAttribute="leading" constant="40" id="qR4-rB-rcP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jQn-gb-Wsf"/>
