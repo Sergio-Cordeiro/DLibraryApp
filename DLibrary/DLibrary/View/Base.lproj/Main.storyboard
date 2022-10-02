@@ -521,6 +521,9 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButoon:" destination="bGi-aG-vgl" eventType="touchUpInside" id="SIb-EW-HoS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-ER-p23">
                                 <rect key="frame" x="195.5" y="500.5" width="23" height="21"/>
@@ -544,6 +547,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registerButton:" destination="bGi-aG-vgl" eventType="touchUpInside" id="eg2-UK-c9W"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="y5h-jY-AFQ"/>
                                 </connections>
                             </button>
@@ -579,6 +583,10 @@
                             <constraint firstItem="9Ex-fe-Lnk" firstAttribute="trailing" secondItem="2t9-ac-vV1" secondAttribute="trailing" constant="80" id="xV1-3t-wT1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="al6-Sn-Cc0" id="1Q8-HS-L2d"/>
+                        <outlet property="passwordText" destination="qRZ-M4-ss6" id="9oh-J7-CGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jST-ou-llj" sceneMemberID="firstResponder"/>
             </objects>
