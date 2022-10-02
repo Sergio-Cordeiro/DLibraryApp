@@ -25,6 +25,7 @@
 		D15AE3EF28DF9285006FC18B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EE28DF9285006FC18B /* Book.swift */; };
 		D15AE3F228E145B8006FC18B /* SearchBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */; };
 		D1DA66FD28E907280096E6DF /* UICornerableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA66FC28E907280096E6DF /* UICornerableTextView.swift */; };
+		D1DA66FF28E90EA20096E6DF /* DescriptionBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D15AE3EE28DF9285006FC18B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksTableViewCell.swift; sourceTree = "<group>"; };
 		D1DA66FC28E907280096E6DF /* UICornerableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableTextView.swift; sourceTree = "<group>"; };
+		D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				D11D53AD28CD56B1009162B1 /* AppDelegate.swift */,
 				D11D53B128CD56B1009162B1 /* HomeViewController.swift */,
 				D15AE3EA28DF6913006FC18B /* SearchBooksViewController.swift */,
+				D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DA66FF28E90EA20096E6DF /* DescriptionBookViewController.swift in Sources */,
 				D1DA66FD28E907280096E6DF /* UICornerableTextView.swift in Sources */,
 				D11D53B228CD56B1009162B1 /* HomeViewController.swift in Sources */,
 				D11D53E628CD6212009162B1 /* UICornerableView.swift in Sources */,

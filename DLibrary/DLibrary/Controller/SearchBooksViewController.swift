@@ -101,7 +101,6 @@ extension SearchBooksViewController: UITableViewDataSource {
         let book = books[indexPath.row]
         
         if let imageBookLink: String  = book.images["smallThumbnail"] {
-//            UIImageView.af.sharedImageDownloader.imageCache?.removeAllImages()
             
             let http = URL(string: imageBookLink)!
             var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)!
@@ -139,6 +138,17 @@ extension SearchBooksViewController: UITableViewDataSource {
        
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let book = books[indexPath.row]
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let controller = storyBoard.instantiateViewController(withIdentifier: "DescriptionBookViewController") as? DescriptionBookViewController {
+            controller.book = book
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     
 }
