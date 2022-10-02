@@ -46,13 +46,12 @@ class DescriptionBookViewController: UIViewController {
     //MARK: - Private Methods
     
     private func fixLayoutComponents() {
-//        infoViews.backgroundColor = UIColor.white
+        overrideUserInterfaceStyle = .light
         infoViews.layer.shadowColor = UIColor.black.cgColor
         infoViews.layer.shadowOpacity = 5.24
         infoViews.layer.shadowOffset = .zero
         infoViews.layer.shadowRadius = 3
         infoViews.layer.cornerRadius = 10
-        
         
         descriptionText.textContainerInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         descriptionText.layer.opacity = 0.8
