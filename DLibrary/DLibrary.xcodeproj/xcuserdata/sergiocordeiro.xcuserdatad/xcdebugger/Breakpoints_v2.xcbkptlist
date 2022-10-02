@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D5C84A55-88DC-4D20-9164-7D09A323CA1D"
-            shouldBeEnabled = "Yes"
+            uuid = "40B04ED6-59ED-49CD-94EE-334268693C46"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DLibrary/Controller/SearchBooksViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "searchForFreeBooksAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -15,6 +15,33 @@ class GoogleBooksProvider {
     private static let basePath = "https://www.googleapis.com/books/v1/volumes?q="
     private static let basePathBooks = "https://www.googleapis.com/books/v1/volumes?q=book" // MARK: - Catch all Books
     private static let basePathSearchFreeBooks = "https://www.googleapis.com/books/v1/volumes?q=free-ebooks" // MARK: - Catch Free Books
+    private static let basePathFreeBooks = "&filter=free-ebooks"
+    
+    class func searchWithParameters(searchParameter: String, isFreeBooks: Bool, completion: @escaping (_ success: Bool,_ data: Data?) -> Void) {
+        var url: URL?
+        
+        if isFreeBooks {
+            url = URL(string: "\(basePath)\(searchParameter)\(basePathFreeBooks)")
+        } else {
+            url = URL(string: "\(basePath)\(searchParameter)")
+        }
+        
+        guard let url = url else {
+            completion(false, nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let dataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                completion(false, nil)
+            } else {
+                completion(true, data)
+            }
+        }
+        dataTask.resume()
+    }
     
     class func getAllBooks(completion: @escaping (_ success: Bool,_ data: Data?) -> Void) {
         guard let url = URL(string: basePathBooks) else {
@@ -50,9 +77,5 @@ class GoogleBooksProvider {
             }
         }
         dataTask.resume()
-    }
-    
-    class func searchWithParameters(completion: @escaping (_ success: Bool,_ data: Data?) -> Void) {
-        
     }
 }

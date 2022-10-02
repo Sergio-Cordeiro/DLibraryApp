@@ -32,36 +32,51 @@ class SearchBooksViewController: UIViewController {
     //MARK: - Outlets Actions
     
     @IBAction func searchTextView(_ sender: Any) {
-//        GoogleBooksProvider.searchWithParameters()
-        print("clicou aqui")
-    }
-    
-    @IBAction func searchForFreeBooksAction(_ sender: Any) {
-        searchforFreeBooksSwith.isOn = true
-        GoogleBooksProvider.searchFreeBooks() { success,data in
+        guard let searchText: String = searchTextField.text else { return }
+        
+        let searchWithoutSpaces = searchText.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        let cleanString = searchWithoutSpaces.folding(options: .diacriticInsensitive, locale: .current)
+        
+        GoogleBooksProvider.searchWithParameters(searchParameter: cleanString, isFreeBooks: searchforFreeBooksSwith.isOn) { success,data in
             if success, data != nil {
                 if let data = data {
                     self.books = self.readBooksInJson(data: data)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                }
+            }
+        }
+    }
+    
+    @IBAction func searchForFreeBooksAction(_ sender: Any) {
+        if !searchforFreeBooksSwith.isOn {
+            searchforFreeBooksSwith.isOn = false
+            loadBooks()
+        } else {
+            searchforFreeBooksSwith.isOn = true
+            GoogleBooksProvider.searchFreeBooks() { success,data in
+                if success, data != nil {
+                    if let data = data {
+                        self.books = self.readBooksInJson(data: data)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    } else {
+                        self.searchforFreeBooksSwith.isOn = false
+                        self.showErrorWhenLoadBooks()
+                    }
                 } else {
                     self.searchforFreeBooksSwith.isOn = false
                     self.showErrorWhenLoadBooks()
                 }
-            } else {
-                self.searchforFreeBooksSwith.isOn = false
-                self.showErrorWhenLoadBooks()
             }
-            
         }
     }
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    //MARK: - Public methods
     
     //MARK: - Private methods
     
