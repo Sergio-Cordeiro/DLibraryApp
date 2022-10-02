@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -23,11 +24,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButoon(_ sender: Any) {
-//        if isValidEmail(emailText.text!) {
-//            Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-//                
-//            }
-//        }
+        if isValidEmail(emailText.text!) {
+        let email = "sergio-cordeiro@hotmail.com"
+        let password = "123456"
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+//                guard let strongSelf = self else { return }
+                // ...
+            }
+        }
     }
     
     @IBAction func registerButton(_ sender: Any) {
