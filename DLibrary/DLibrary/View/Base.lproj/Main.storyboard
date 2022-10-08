@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="427" width="414" height="469"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af5-DG-sOQ" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="220" width="300" height="60"/>
+                                        <rect key="frame" x="57" y="150" width="300" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="i79-aD-Jse"/>
                                             <constraint firstAttribute="height" constant="60" id="zfo-AD-fzd"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-rX-DHz" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="54.5" y="100" width="305" height="60"/>
+                                        <rect key="frame" x="54.5" y="60" width="305" height="60"/>
                                         <color key="backgroundColor" red="0.2890195847" green="0.64470970630000002" blue="0.92017859219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Dee-rQ-2fV"/>
@@ -73,13 +73,43 @@
                                             <segue destination="oXg-mg-qIX" kind="show" id="nfX-kP-m24"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gL6-iu-5gh" customClass="UICornerableButton" customModule="DLibrary" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="240" width="300" height="60"/>
+                                        <color key="backgroundColor" red="0.2890195847" green="0.64470970630000002" blue="0.92017859219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="1It-vV-Z6g"/>
+                                            <constraint firstAttribute="height" constant="60" id="fhZ-Al-cHY"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Salvar novo livro">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="KMh-Ww-kAu" kind="show" id="Md2-hV-Dge"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="af5-DG-sOQ" firstAttribute="centerX" secondItem="OZh-eQ-ZJk" secondAttribute="centerX" id="0PS-Ha-LyT"/>
-                                    <constraint firstItem="af5-DG-sOQ" firstAttribute="top" secondItem="COQ-rX-DHz" secondAttribute="bottom" constant="60" id="28n-pf-7CY"/>
+                                    <constraint firstItem="gL6-iu-5gh" firstAttribute="trailing" secondItem="af5-DG-sOQ" secondAttribute="trailing" id="0pf-ry-7ek"/>
+                                    <constraint firstItem="af5-DG-sOQ" firstAttribute="top" secondItem="COQ-rX-DHz" secondAttribute="bottom" constant="30" id="28n-pf-7CY"/>
+                                    <constraint firstItem="gL6-iu-5gh" firstAttribute="top" secondItem="af5-DG-sOQ" secondAttribute="bottom" constant="30" id="7m6-iB-Ax4"/>
+                                    <constraint firstItem="gL6-iu-5gh" firstAttribute="centerX" secondItem="OZh-eQ-ZJk" secondAttribute="centerX" id="MCZ-x4-Ovz"/>
                                     <constraint firstItem="COQ-rX-DHz" firstAttribute="centerX" secondItem="OZh-eQ-ZJk" secondAttribute="centerX" id="UWO-sX-V1j"/>
-                                    <constraint firstItem="COQ-rX-DHz" firstAttribute="top" secondItem="OZh-eQ-ZJk" secondAttribute="top" constant="100" id="htG-mu-JFA"/>
+                                    <constraint firstItem="COQ-rX-DHz" firstAttribute="top" secondItem="OZh-eQ-ZJk" secondAttribute="top" constant="60" id="htG-mu-JFA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -311,7 +341,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8m-2V-vKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119" y="854"/>
+            <point key="canvasLocation" x="-491" y="850"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wQY-uA-0hP">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="KMh-Ww-kAu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJb-fM-rD1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tela salvar novo livro manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j7-QH-zaf">
+                                <rect key="frame" x="74.5" y="444.5" width="265" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JUH-9C-Ib3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2j7-QH-zaf" firstAttribute="centerY" secondItem="JUH-9C-Ib3" secondAttribute="centerY" id="mYT-0V-MYj"/>
+                            <constraint firstItem="2j7-QH-zaf" firstAttribute="centerX" secondItem="JUH-9C-Ib3" secondAttribute="centerX" id="twe-Ig-chS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3fL-Dk-dZI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxb-wD-8kY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="850"/>
         </scene>
         <!--Description Book View Controller-->
         <scene sceneID="61u-6h-sz7">
