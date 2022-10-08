@@ -15,21 +15,44 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var passwordTextConfirm: UITextField!
     
+    // MARK: - Override
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    // MARK: - Action
+    
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+//    MARK: - Mock:
+//    let email = "sergio-cordeiro@hotmail.com"
+//    let password = "123456"
+    
     @IBAction func registerButton(_ sender: Any) {
         if isEmailEqual(emailText.text!, confirmEmail.text!), isValidEmail(emailText.text!), isPasswordEqual(passwordText.text!, passwordTextConfirm.text!) {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { authResult, error in
-              
-                
-                //TODO: Verify If user was created
-                
-                
+                if error != nil {
+                    self.errorInformationPopUp()
+                } else {
+                    print(authResult as Any)
+                    self.successEntry()
+                }
             }
         } else {
             errorInformationPopUp()
+        }
+    }
+    
+    // MARK: - Private function
+    
+    private func successEntry() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let controller = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? DescriptionBookViewController {
+            self.present(controller, animated: true, completion: nil)
         }
     }
     

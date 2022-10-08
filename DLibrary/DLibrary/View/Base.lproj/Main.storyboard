@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomeViewController" customModule="DLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="DLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,13 +322,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ6-iO-5RA">
-                                <rect key="frame" x="112" y="65.5" width="292" height="26.5"/>
+                                <rect key="frame" x="112" y="67.5" width="292" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIq-ea-I8s">
-                                <rect key="frame" x="10" y="50" width="92" height="57.5"/>
+                                <rect key="frame" x="10" y="50" width="92" height="61.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="&lt; Voltar">
@@ -339,7 +339,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-5S-5c0" customClass="UICornerableView" customModule="DLibrary" customModuleProvider="target">
-                                <rect key="frame" x="20" y="122" width="374" height="190"/>
+                                <rect key="frame" x="20" y="124" width="374" height="188"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-d7-Wn1">
                                         <rect key="frame" x="20" y="20" width="128" height="169"/>
@@ -495,7 +495,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="al6-Sn-Cc0">
                                 <rect key="frame" x="50" y="274.5" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRZ-M4-ss6">
                                 <rect key="frame" x="50" y="358.5" width="314" height="34"/>
@@ -512,10 +512,10 @@
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -595,7 +595,7 @@
         <!--Register View Controller-->
         <scene sceneID="GU6-gA-hcc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Ah1-WA-bD0" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Ah1-WA-bD0" customClass="RegisterViewController" customModule="DLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vJn-oD-DUZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,15 +603,15 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DLibrary-logo" translatesAutoresizingMaskIntoConstraints="NO" id="T6z-Xn-yC8">
                                 <rect key="frame" x="124" y="58" width="166" height="166.5"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4x-eK-9vw">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U4x-eK-9vw">
                                 <rect key="frame" x="50" y="254.5" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmT-By-Fcc">
                                 <rect key="frame" x="50" y="318.5" width="314" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booksImage" translatesAutoresizingMaskIntoConstraints="NO" id="aXp-UU-87c">
                                 <rect key="frame" x="0.0" y="700" width="414" height="196"/>
@@ -639,18 +639,28 @@
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginButoon:" destination="Ah1-WA-bD0" eventType="touchUpInside" id="Uu4-s9-knS"/>
                                     <action selector="registerButton:" destination="Ah1-WA-bD0" eventType="touchUpInside" id="xWR-cM-5y3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-D6-GY8">
+                                <rect key="frame" x="5" y="53" width="82" height="33.5"/>
+                                <color key="tintColor" red="0.092107780279999996" green="0.64256435629999997" blue="0.92095559839999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt; Voltar">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButton:" destination="Ah1-WA-bD0" eventType="touchUpInside" id="trG-bU-mQH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -664,6 +674,7 @@
                             <constraint firstItem="6xs-Rs-GO9" firstAttribute="top" secondItem="cgd-Eu-pcJ" secondAttribute="bottom" constant="40" id="D2w-iz-qwO"/>
                             <constraint firstItem="hJ3-F7-NfY" firstAttribute="trailing" secondItem="aXp-UU-87c" secondAttribute="trailing" id="E4G-8A-HF6"/>
                             <constraint firstItem="T6z-Xn-yC8" firstAttribute="leading" secondItem="hJ3-F7-NfY" secondAttribute="leading" constant="124" id="Fgy-jk-M6F"/>
+                            <constraint firstItem="f52-D6-GY8" firstAttribute="leading" secondItem="hJ3-F7-NfY" secondAttribute="leading" constant="5" id="GYh-8A-60K"/>
                             <constraint firstItem="96N-nn-Te3" firstAttribute="leading" secondItem="hJ3-F7-NfY" secondAttribute="leading" constant="50" id="PnX-G9-4QT"/>
                             <constraint firstItem="hJ3-F7-NfY" firstAttribute="trailing" secondItem="6xs-Rs-GO9" secondAttribute="trailing" constant="80" id="R8m-aG-oov"/>
                             <constraint firstItem="hJ3-F7-NfY" firstAttribute="trailing" secondItem="qmT-By-Fcc" secondAttribute="trailing" constant="50" id="SQE-GK-jzw"/>
@@ -676,7 +687,9 @@
                             <constraint firstItem="6xs-Rs-GO9" firstAttribute="leading" secondItem="hJ3-F7-NfY" secondAttribute="leading" constant="80" id="hqC-qv-kyp"/>
                             <constraint firstItem="cgd-Eu-pcJ" firstAttribute="top" secondItem="96N-nn-Te3" secondAttribute="bottom" constant="30" id="iwo-6f-wot"/>
                             <constraint firstItem="cgd-Eu-pcJ" firstAttribute="leading" secondItem="hJ3-F7-NfY" secondAttribute="leading" constant="50" id="lrF-5P-jjz"/>
+                            <constraint firstItem="T6z-Xn-yC8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f52-D6-GY8" secondAttribute="trailing" constant="8" symbolic="YES" id="lv3-OI-kX0"/>
                             <constraint firstItem="hJ3-F7-NfY" firstAttribute="trailing" secondItem="cgd-Eu-pcJ" secondAttribute="trailing" constant="50" id="pe7-f2-17O"/>
+                            <constraint firstItem="f52-D6-GY8" firstAttribute="top" secondItem="hJ3-F7-NfY" secondAttribute="top" constant="5" id="qFp-Da-Pp2"/>
                             <constraint firstItem="qmT-By-Fcc" firstAttribute="top" secondItem="U4x-eK-9vw" secondAttribute="bottom" constant="30" id="qo1-zg-Rb6"/>
                             <constraint firstItem="T6z-Xn-yC8" firstAttribute="centerX" secondItem="hJ3-F7-NfY" secondAttribute="centerX" id="wFW-Sk-2Z8"/>
                             <constraint firstItem="96N-nn-Te3" firstAttribute="top" secondItem="qmT-By-Fcc" secondAttribute="bottom" constant="30" id="zwD-a1-Agt"/>
