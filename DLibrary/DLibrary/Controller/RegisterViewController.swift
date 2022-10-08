@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
     private func successEntry() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let controller = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? DescriptionBookViewController {
+        if let controller = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
             self.present(controller, animated: true, completion: nil)
         }
     }
