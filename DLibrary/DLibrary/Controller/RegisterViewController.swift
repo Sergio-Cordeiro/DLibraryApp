@@ -38,6 +38,7 @@ class RegisterViewController: UIViewController {
                     self.errorInformationPopUp()
                 } else {
                     print(authResult as Any)
+                    DLibraryManager.sharedInstance.user = authResult?.user
                     self.successEntry()
                 }
             }

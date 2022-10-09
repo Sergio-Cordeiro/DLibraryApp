@@ -34,7 +34,8 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self?.errorInformationPopUp()
                 } else {
-                    print(authResult as Any)
+                    print(authResult?.user as Any)
+                    DLibraryManager.sharedInstance.user = authResult?.user
                     self?.successLogin()
                 }
             }

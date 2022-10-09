@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 import AlamofireImage
+import FirebaseDatabase
 
 class DescriptionBookViewController: UIViewController {
 
     var book: Book?
+    var ref: DatabaseReference?
     
     //MARK: - Outlets
     
@@ -26,11 +29,18 @@ class DescriptionBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         loadComponents()
         fixLayoutComponents()
     }
 
     //MARK: - Actions Methods
+    
+    @IBAction func saveBook(_ sender: Any) {
+        if let userUid = DLibraryManager.sharedInstance.user?.uid, let bookDict = returnBook() {
+            self.ref?.child("users").child(userUid).setValue(["livro": bookDict])
+        }
+    }
     
     @IBAction func openBookLink(_ sender: Any) {
         if let link = book?.previewLink {
@@ -44,6 +54,21 @@ class DescriptionBookViewController: UIViewController {
     }
     
     //MARK: - Private Methods
+    
+    private func returnBook() -> NSDictionary? {
+        guard let book = book else { return nil }
+        let dic: NSDictionary = [
+            "id": "\(book.id)",
+            "description": "\(book.description)",
+            "title": "\(book.title)",
+            "type": "\(book.type)",
+            "pagesCount": "\(book.pagesCount)",
+            "language": "\(book.language)",
+            "images": "\(book.images)",
+            "previewLink": "\(book.previewLink)",
+        ]
+        return dic
+    }
     
     private func fixLayoutComponents() {
         overrideUserInterfaceStyle = .light
@@ -85,7 +110,6 @@ class DescriptionBookViewController: UIViewController {
                                 filter: nil,
                                 imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
                                 runImageTransitionIfCached: false) {_ in }
-                //imageView.image = book.
             }
             
         }
