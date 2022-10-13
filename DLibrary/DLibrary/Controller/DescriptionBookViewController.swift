@@ -12,6 +12,8 @@ import FirebaseDatabase
 
 class DescriptionBookViewController: UIViewController {
 
+    //MARK: - Properties
+    
     var book: Book?
     var ref: DatabaseReference?
     

@@ -25,6 +25,8 @@
 		D15AE3EF28DF9285006FC18B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EE28DF9285006FC18B /* Book.swift */; };
 		D15AE3F228E145B8006FC18B /* SearchBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */; };
 		D1830D6B28EA39BC00AD692E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1830D6A28EA39BC00AD692E /* RegisterViewController.swift */; };
+		D197C89F28F7AFB7008D7A42 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197C89E28F7AFB7008D7A42 /* MyBooksViewController.swift */; };
+		D197C8A128F7B00D008D7A42 /* RegisterNewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197C8A028F7B00D008D7A42 /* RegisterNewBookViewController.swift */; };
 		D1C0868728F28C12005CBF92 /* DLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0868628F28C12005CBF92 /* DLibraryManager.swift */; };
 		D1DA66FD28E907280096E6DF /* UICornerableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA66FC28E907280096E6DF /* UICornerableTextView.swift */; };
 		D1DA66FF28E90EA20096E6DF /* DescriptionBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */; };
@@ -77,6 +79,8 @@
 		D15AE3EE28DF9285006FC18B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksTableViewCell.swift; sourceTree = "<group>"; };
 		D1830D6A28EA39BC00AD692E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D197C89E28F7AFB7008D7A42 /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
+		D197C8A028F7B00D008D7A42 /* RegisterNewBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewBookViewController.swift; sourceTree = "<group>"; };
 		D1C0868628F28C12005CBF92 /* DLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibraryManager.swift; sourceTree = "<group>"; };
 		D1DA66FC28E907280096E6DF /* UICornerableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerableTextView.swift; sourceTree = "<group>"; };
 		D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionBookViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				D1DA66FE28E90EA20096E6DF /* DescriptionBookViewController.swift */,
 				D1DA671D28EA2E660096E6DF /* LoginViewController.swift */,
 				D1830D6A28EA39BC00AD692E /* RegisterViewController.swift */,
+				D197C89E28F7AFB7008D7A42 /* MyBooksViewController.swift */,
+				D197C8A028F7B00D008D7A42 /* RegisterNewBookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,10 +404,12 @@
 				D15AE3ED28DF76E1006FC18B /* GoogleBooksProvider.swift in Sources */,
 				D13D2BDD28DF387F00EBE03F /* UICornerableButton.swift in Sources */,
 				D11D53AE28CD56B1009162B1 /* AppDelegate.swift in Sources */,
+				D197C89F28F7AFB7008D7A42 /* MyBooksViewController.swift in Sources */,
 				D15AE3EF28DF9285006FC18B /* Book.swift in Sources */,
 				D1830D6B28EA39BC00AD692E /* RegisterViewController.swift in Sources */,
 				D11D53B828CD56B1009162B1 /* DLibrary.xcdatamodeld in Sources */,
 				D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */,
+				D197C8A128F7B00D008D7A42 /* RegisterNewBookViewController.swift in Sources */,
 				D1DA671E28EA2E670096E6DF /* LoginViewController.swift in Sources */,
 				D15AE3EB28DF6913006FC18B /* SearchBooksViewController.swift in Sources */,
 			);

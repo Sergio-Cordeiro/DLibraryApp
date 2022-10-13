@@ -316,10 +316,10 @@
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--My Books View Controller-->
         <scene sceneID="OhL-pw-wNQ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="YMT-3M-yxV" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="YMT-3M-yxV" customClass="MyBooksViewController" customModule="DLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="80T-Qv-kBu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,10 +437,10 @@
             </objects>
             <point key="canvasLocation" x="-491.304347826087" y="849.77678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Register New Book View Controller-->
         <scene sceneID="wQY-uA-0hP">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="KMh-Ww-kAu" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="KMh-Ww-kAu" customClass="RegisterNewBookViewController" customModule="DLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJb-fM-rD1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,6 +452,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="&lt; Voltar">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButton:" destination="KMh-Ww-kAu" eventType="touchUpInside" id="cpg-g1-OPu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar novo livro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-5V-je4">
                                 <rect key="frame" x="40" y="83" width="334" height="30"/>
@@ -507,8 +510,8 @@
                                                 <rect key="frame" x="188" y="0.0" width="186" height="30"/>
                                                 <menu key="menu" id="pAs-RZ-Eq1">
                                                     <children>
-                                                        <command title="Item 1" id="4qL-Oi-Cls"/>
-                                                        <command title="Item 2" id="RIi-XV-QGw"/>
+                                                        <command title="EN" id="4qL-Oi-Cls"/>
+                                                        <command title="PT" id="RIi-XV-QGw"/>
                                                     </children>
                                                 </menu>
                                                 <state key="normal" title="Linguagem"/>
@@ -543,6 +546,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="saveBook:" destination="bae-sc-2e9" eventType="touchUpInside" id="mo6-8a-bIU"/>
+                                            <action selector="saveBook:" destination="KMh-Ww-kAu" eventType="touchUpInside" id="vAy-hK-5ZF"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Od1-CH-pM0">
@@ -606,6 +610,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3fL-Dk-dZI"/>
+                    <connections>
+                        <outlet property="bookDescription" destination="Od1-CH-pM0" id="NSg-fX-Btu"/>
+                        <outlet property="bookNameTf" destination="gju-Xz-bYe" id="AyQ-a0-ad6"/>
+                        <outlet property="bookType" destination="bPA-de-cLU" id="7sW-hn-C1U"/>
+                        <outlet property="languageButton" destination="W7I-cX-Cxv" id="fV1-rG-O6h"/>
+                        <outlet property="numberOfPagesTf" destination="h49-2A-Tww" id="VxW-tK-yvH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxb-wD-8kY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
