@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import FirebaseDatabase
 import FirebaseStorage
+import FirebaseDatabase
+import ALCameraViewController
 
 class RegisterNewBookViewController: UIViewController {
 
@@ -63,8 +64,18 @@ class RegisterNewBookViewController: UIViewController {
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-
-        uploadAndGenerateUrlImage(image: imageView.image!)
+        takePhotofuncion()
+    }
+    
+    private func takePhotofuncion() {
+        let cameraViewController = CameraViewController { [weak self] image, asset in
+           if let image = image {
+               self?.imageView.image = image
+               self?.uploadAndGenerateUrlImage(image: image)
+          }
+           self?.dismiss(animated: true, completion: nil)
+       }
+       present(cameraViewController, animated: true, completion: nil)
     }
     
     private func returnBook() -> NSDictionary? {
