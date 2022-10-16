@@ -15,6 +15,7 @@ class DescriptionBookViewController: UIViewController {
     //MARK: - Properties
     
     var book: Book?
+    var isOptionSaveScreenAvaliable: Bool = true
     var ref: DatabaseReference?
     
     //MARK: - Outlets
@@ -26,6 +27,8 @@ class DescriptionBookViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionText: UICornerableTextView!
     @IBOutlet weak var infoViews: UICornerableView!
+    @IBOutlet weak var saveButton: UICornerableButton!
+    @IBOutlet weak var preBookVisualizer: UICornerableButton!
     
     //MARK: - Overrides
     
@@ -41,6 +44,7 @@ class DescriptionBookViewController: UIViewController {
     @IBAction func saveBook(_ sender: Any) {
         if let userUid = DLibraryManager.sharedInstance.user?.uid, let bookDict = returnBook() {
             self.ref?.child("users").child(userUid).setValue(["livro": bookDict])
+            successSaveAlert()
         }
     }
     
@@ -56,6 +60,16 @@ class DescriptionBookViewController: UIViewController {
     }
     
     //MARK: - Private Methods
+    
+    private func successSaveAlert() {
+        let alert = UIAlertController(title: "Livro salvo com sucesso ", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok!", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
     
     private func returnBook() -> NSDictionary? {
         guard let book = book else { return nil }
@@ -73,6 +87,12 @@ class DescriptionBookViewController: UIViewController {
     }
     
     private func fixLayoutComponents() {
+        if !isOptionSaveScreenAvaliable {
+            saveButton.isHidden = true
+            if book?.previewLink == "" {
+                preBookVisualizer.isHidden = true
+            }
+        }
         overrideUserInterfaceStyle = .light
         infoViews.layer.shadowColor = UIColor.black.cgColor
         infoViews.layer.shadowOpacity = 5.24

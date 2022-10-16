@@ -185,6 +185,7 @@ extension SearchBooksViewController: UITableViewDataSource {
         
         if let controller = storyBoard.instantiateViewController(withIdentifier: "DescriptionBookViewController") as? DescriptionBookViewController {
             controller.book = book
+            controller.isOptionSaveScreenAvaliable = true 
             self.present(controller, animated: true, completion: nil)
         }
     }
