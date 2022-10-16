@@ -614,6 +614,7 @@
                         <outlet property="bookDescription" destination="Od1-CH-pM0" id="NSg-fX-Btu"/>
                         <outlet property="bookNameTf" destination="gju-Xz-bYe" id="AyQ-a0-ad6"/>
                         <outlet property="bookType" destination="bPA-de-cLU" id="7sW-hn-C1U"/>
+                        <outlet property="imageView" destination="9yW-6G-Ut3" id="LHy-Ic-p0r"/>
                         <outlet property="languageButton" destination="W7I-cX-Cxv" id="fV1-rG-O6h"/>
                         <outlet property="numberOfPagesTf" destination="h49-2A-Tww" id="VxW-tK-yvH"/>
                     </connections>

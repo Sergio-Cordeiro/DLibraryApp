@@ -7,12 +7,17 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class RegisterNewBookViewController: UIViewController {
 
     //MARK: - Properties
     
     var ref: DatabaseReference?
+    var storage: Storage?
+    var storageRef: StorageReference?
+    var userStorageRef: StorageReference?
+    var linkImage: String?
     
     //MARK: - Outlets
     
@@ -21,14 +26,25 @@ class RegisterNewBookViewController: UIViewController {
     @IBOutlet weak var bookType: UICornerableButton!
     @IBOutlet weak var languageButton: UICornerableButton!
     @IBOutlet weak var bookDescription: UITextView!
-    
-    //TODO: Transformar uiImage em botão
+    @IBOutlet weak var imageView: UIImageView!
     
     //MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        storage = Storage.storage()
+        storageRef = storage?.reference()
+        if let userUid = DLibraryManager.sharedInstance.user?.uid {
+            userStorageRef = storageRef?.child("images/\(userUid)/")
+        }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(imageTapped(tapGestureRecognizer:))
+        )
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     //MARK: - Actions Methods
@@ -45,6 +61,12 @@ class RegisterNewBookViewController: UIViewController {
     
     //MARK: - Private Methods
     
+    @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+
+        uploadAndGenerateUrlImage(image: imageView.image!)
+    }
+    
     private func returnBook() -> NSDictionary? {
         let dic: NSDictionary = [
             "id": "\(returnRandomId())",
@@ -53,10 +75,28 @@ class RegisterNewBookViewController: UIViewController {
             "type": "\(returnBookType())",
             "pagesCount": "\(returnNumberOfPages())",
             "language": "\(returnLanguage())",
-            "images": "\(book.images)",
-            "previewLink": "\(book.previewLink)",
+            "images": "\(linkImage ?? "")",
+            "previewLink": "",
         ]
         return dic
+    }
+    
+    private func uploadAndGenerateUrlImage(image: UIImage) {
+        guard let imageData = image.pngData() else { return }
+        let uploadTask = userStorageRef?.putData(imageData, metadata: nil) { (metadata, error) in
+          if error != nil {
+              print(error?.localizedDescription as Any)
+          }
+            self.userStorageRef?.downloadURL { (url, error) in
+              guard let downloadURL = url else {
+                  print("Erro ao obter link da imagem:")
+                  print(error?.localizedDescription as Any)
+                return
+              }
+                self.linkImage = "\(downloadURL)"
+                print("Sucesso ao obter link da imagem:\(downloadURL)")
+            }
+        }
     }
     
     private func returnRandomId() -> Int {
