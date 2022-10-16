@@ -43,7 +43,7 @@ class DescriptionBookViewController: UIViewController {
     
     @IBAction func saveBook(_ sender: Any) {
         if let userUid = DLibraryManager.sharedInstance.user?.uid, let bookDict = returnBook() {
-            self.ref?.child("users").child(userUid).setValue(["livro": bookDict])
+            self.ref?.child("users").child(userUid).child("livros").childByAutoId().setValue(bookDict)
             successSaveAlert()
         }
     }
