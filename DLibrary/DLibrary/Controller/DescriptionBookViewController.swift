@@ -77,7 +77,7 @@ class DescriptionBookViewController: UIViewController {
             "id": "\(book.id)",
             "description": "\(book.description)",
             "title": "\(book.title)",
-            "type": "\(book.type)",
+            "printType": "\(book.type)",
             "pagesCount": "\(book.pagesCount)",
             "language": "\(book.language)",
             "images": "\(book.images)",

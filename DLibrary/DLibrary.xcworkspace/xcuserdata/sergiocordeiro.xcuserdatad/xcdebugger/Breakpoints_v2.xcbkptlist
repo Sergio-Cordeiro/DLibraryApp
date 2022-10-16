@@ -62,8 +62,8 @@
             filePath = "DLibrary/Controller/MyBooksViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "readBooksInJson(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7D5CB5E6-A688-4DF6-8499-805B36BAEFA2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DLibrary/Controller/MyBooksViewController.swift"
@@ -162,6 +162,70 @@
             endingLineNumber = "58"
             landmarkName = "readBooksInJson(data:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E53EE4CA-E28A-450A-9541-042D83A05E2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DLibrary/Controller/MyBooksViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "readBooksInJson(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15405837-039A-46D3-9FD2-7E8EC43B323D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DLibrary/Model/Book.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "byDict(dict:id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "15405837-039A-46D3-9FD2-7E8EC43B323D - fe9d08d73c87b6d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DLibrary.Book.byDict(dict: Swift.Dictionary&lt;Swift.String, Any&gt;, id: Swift.String) -&gt; Swift.Optional&lt;DLibrary.Book&gt;"
+                  moduleName = "DLibrary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergiocordeiro/Documents/Repositorios/DLibrary/DLibraryApp/DLibrary/DLibrary/Model/Book.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "259">
+               </Location>
+               <Location
+                  uuid = "15405837-039A-46D3-9FD2-7E8EC43B323D - fe9d08d73c87b6d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DLibrary.Book.byDict(dict: Swift.Dictionary&lt;Swift.String, Any&gt;, id: Swift.String) -&gt; Swift.Optional&lt;DLibrary.Book&gt;"
+                  moduleName = "DLibrary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergiocordeiro/Documents/Repositorios/DLibrary/DLibraryApp/DLibrary/DLibrary/Model/Book.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "541">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

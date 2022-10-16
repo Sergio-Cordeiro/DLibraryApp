@@ -55,14 +55,20 @@ class MyBooksViewController: UIViewController {
         var arrayBooks: [Book] = []
         do {
             guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return arrayBooks }
-            guard let items = json["livros"] as? [Dictionary<AnyHashable, Any>] else { return arrayBooks }
+            guard let items = json["livros"] as? [String:[String:Any]] else { return arrayBooks }
             for item in items {
-                if let value = item["volumeInfo"] as? [String : Any],
-                   let id = item["id"] as? String {
-                    if let book = Book.byDict(dict: value, id: id) {
-                        arrayBooks.append(book)
-                    }
+                //TODO: - Verificar uso do ID
+                 let bookFromFireBase = item.value
+                if let book = Book.byDict(dict: bookFromFireBase, id: item.key) {
+                    arrayBooks.append(book)
                 }
+                
+//                if let value = item["volumeInfo"] as? [String : Any],
+//                   let id = item["id"] as? String {
+//                    if let book = Book.byDict(dict: value, id: id) {
+//                        arrayBooks.append(book)
+//                    }
+//                }
             }
         } catch {
             showErrorWhenLoadBooks()
