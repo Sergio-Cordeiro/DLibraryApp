@@ -1,0 +1,6 @@
+framework module Pods_DLibrary_DLibraryUITests {
+  umbrella header "Pods-DLibrary-DLibraryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

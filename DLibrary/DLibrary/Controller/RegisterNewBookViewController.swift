@@ -97,6 +97,7 @@ class RegisterNewBookViewController: UIViewController {
                 print("Sucesso ao obter link da imagem:\(downloadURL)")
             }
         }
+        uploadTask?.resume()
     }
     
     private func returnRandomId() -> Int {
