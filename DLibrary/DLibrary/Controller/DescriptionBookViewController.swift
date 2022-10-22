@@ -34,6 +34,7 @@ class DescriptionBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         ref = Database.database().reference()
         loadComponents()
         fixLayoutComponents()

@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
 
     // MARK: - Action
@@ -26,10 +27,6 @@ class RegisterViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-//    MARK: - Mock:
-//    let email = "sergio-cordeiro@hotmail.com"
-//    let password = "123456"
     
     @IBAction func registerButton(_ sender: Any) {
         if isEmailEqual(emailText.text!, confirmEmail.text!), isValidEmail(emailText.text!), isPasswordEqual(passwordText.text!, passwordTextConfirm.text!) {

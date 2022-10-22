@@ -19,11 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
-    
-//    MARK: - Mocks
-//    let email = "sergio-cordeiro@hotmail.com"
-//    let password = "123456"
     
     // MARK: - Actions
     

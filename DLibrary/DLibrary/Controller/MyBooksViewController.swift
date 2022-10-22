@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import AlamofireImage
 
 class MyBooksViewController: UIViewController {
     
@@ -91,32 +92,34 @@ extension MyBooksViewController: UITableViewDataSource {
         
         if let imageBookLink: String  = book.images["smallThumbnail"] {
             
-            let http = URL(string: imageBookLink)!
-            var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)!
-            comps.scheme = "https"
-            let https = comps.url!
-            
-            cell.imageView?.af.setImage(
-                            withURL: https,
-                            placeholderImage: UIImage(named: "Placeholder Image"),
-                            filter: nil,
-                            imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
-                            runImageTransitionIfCached: false) {
-                                response in
-                                    if response.response != nil {
-                                        self.tableView.beginUpdates()
-                                        self.tableView.endUpdates()
-                                    } else {
-                                        if response.error != nil {
-                                            self.tableView.beginUpdates()
-                                            self.tableView.endUpdates()
-                                        }
+            if let http = URL(string: imageBookLink) {
+                var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)
+                comps?.scheme = "https"
+                if let https = comps?.url {
+                    let filter = AspectScaledToFillSizeFilter(size: (cell.imageView?.frame.size)!)
+                    cell.imageView?.af.setImage(
+                                    withURL: https,
+                                    placeholderImage: UIImage(named: "Placeholder Image"),
+                                    filter: filter,
+                                    imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
+                                    runImageTransitionIfCached: false) {
+                                        response in
+                                            if response.response != nil {
+                                                self.tableView.beginUpdates()
+                                                self.tableView.endUpdates()
+                                            } else {
+                                                if response.error != nil {
+                                                    self.tableView.beginUpdates()
+                                                    self.tableView.endUpdates()
+                                                }
+                                            }
                                     }
-                            }
+                }
+            }
         }
         
         cell.nameBookText.text = book.title
-        
+        cell.imageView?.frame = CGRect(x: 0, y: 0, width: 128, height: 169)
         cell.clipsToBounds = false
         cell.bodyView.backgroundColor = UIColor.white
         cell.bodyView.layer.shadowColor = UIColor.black.cgColor

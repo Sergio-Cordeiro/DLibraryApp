@@ -33,7 +33,9 @@ class RegisterNewBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         ref = Database.database().reference()
+        hideKeyboardWhenTappedAround()
         storage = Storage.storage()
         storageRef = storage?.reference()
         if let userUid = DLibraryManager.sharedInstance.user?.uid {
@@ -56,14 +58,40 @@ class RegisterNewBookViewController: UIViewController {
     
     @IBAction func saveBook(_ sender: Any) {
         if let userUid = DLibraryManager.sharedInstance.user?.uid, let bookDict = returnBook() {
-            self.ref?.child("users").child(userUid).setValue(["livro": bookDict])
+            self.ref?.child("users").child(userUid).child("livros").childByAutoId().setValue(bookDict)
+            confirmSaveBook()
         }
     }
     
     //MARK: - Private Methods
     
+    private func confirmSaveBook() {
+        successSaveAlert()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func successSaveAlert() {
+        let alert = UIAlertController(title: "Livro salvo com sucesso ", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok!", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        _ = tapGestureRecognizer.view as! UIImageView
         takePhotofuncion()
     }
     
@@ -75,7 +103,9 @@ class RegisterNewBookViewController: UIViewController {
           }
            self?.dismiss(animated: true, completion: nil)
        }
-       present(cameraViewController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(cameraViewController, animated: true, completion: nil)
+        }
     }
     
     private func returnBook() -> NSDictionary? {
@@ -83,10 +113,12 @@ class RegisterNewBookViewController: UIViewController {
             "id": "\(returnRandomId())",
             "description": "\(returnDescription())",
             "title": "\(returnBookName())",
-            "type": "\(returnBookType())",
-            "pagesCount": "\(returnNumberOfPages())",
+            "printType": "\(returnBookType())",
+            "pageCount": returnNumberOfPages(),
             "language": "\(returnLanguage())",
-            "images": "\(linkImage ?? "")",
+            "imageLinks": ["smallThumbnail":"\(linkImage ?? "")",
+                           "thumbnail":"\(linkImage ?? "")"
+                          ],
             "previewLink": "",
         ]
         return dic
@@ -131,8 +163,8 @@ class RegisterNewBookViewController: UIViewController {
         }
     }
     
-    private func returnNumberOfPages() -> String {
-        return numberOfPagesTf.text ?? "0"
+    private func returnNumberOfPages() -> Int {
+        return Int(numberOfPagesTf.text ?? "0") ?? 0
     }
     
     private func returnLanguage() -> String {
