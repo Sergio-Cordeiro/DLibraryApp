@@ -96,7 +96,7 @@ extension MyBooksViewController: UITableViewDataSource {
                 var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)
                 comps?.scheme = "https"
                 if let https = comps?.url {
-                    let filter = AspectScaledToFillSizeFilter(size: (cell.imageView?.frame.size)!)
+                    let filter = AspectScaledToFillSizeFilter(size: CGSizeMake(100, 141))
                     cell.imageView?.af.setImage(
                                     withURL: https,
                                     placeholderImage: UIImage(named: "Placeholder Image"),
