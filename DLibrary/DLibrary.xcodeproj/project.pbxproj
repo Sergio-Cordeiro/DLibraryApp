@@ -28,6 +28,8 @@
 		D15AE3EF28DF9285006FC18B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3EE28DF9285006FC18B /* Book.swift */; };
 		D15AE3F228E145B8006FC18B /* SearchBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */; };
 		D1830D6B28EA39BC00AD692E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1830D6A28EA39BC00AD692E /* RegisterViewController.swift */; };
+		D190649D2903C5CC000EB540 /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = D190649C2903C5CC000EB540 /* iOSDropDown */; };
+		D190649F2903C742000EB540 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D190649E2903C742000EB540 /* DropDown.swift */; };
 		D197C89F28F7AFB7008D7A42 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197C89E28F7AFB7008D7A42 /* MyBooksViewController.swift */; };
 		D197C8A128F7B00D008D7A42 /* RegisterNewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197C8A028F7B00D008D7A42 /* RegisterNewBookViewController.swift */; };
 		D1A4561628FBD7060036D37E /* DataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4561528FBD7060036D37E /* DataSnapshotExtension.swift */; };
@@ -88,6 +90,7 @@
 		D15AE3EE28DF9285006FC18B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D15AE3F128E145B8006FC18B /* SearchBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksTableViewCell.swift; sourceTree = "<group>"; };
 		D1830D6A28EA39BC00AD692E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D190649E2903C742000EB540 /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 		D197C89E28F7AFB7008D7A42 /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		D197C8A028F7B00D008D7A42 /* RegisterNewBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewBookViewController.swift; sourceTree = "<group>"; };
 		D1A4561528FBD7060036D37E /* DataSnapshotExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshotExtension.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 				D1DA671828EA21770096E6DF /* FirebaseDatabaseSwift in Frameworks */,
 				D1DA671C28EA21770096E6DF /* FirebaseStorageCombine-Community in Frameworks */,
 				D111DF7D28E1520700AFD8AE /* AlamofireImage in Frameworks */,
+				D190649D2903C5CC000EB540 /* iOSDropDown in Frameworks */,
 				D1DA671428EA21770096E6DF /* FirebaseAuthCombine-Community in Frameworks */,
 				D1DA671628EA21770096E6DF /* FirebaseDatabase in Frameworks */,
 				D1DA671228EA21770096E6DF /* FirebaseAuth in Frameworks */,
@@ -264,6 +268,7 @@
 				D11D53E528CD6212009162B1 /* UICornerableView.swift */,
 				D13D2BDC28DF387F00EBE03F /* UICornerableButton.swift */,
 				D1DA66FC28E907280096E6DF /* UICornerableTextView.swift */,
+				D190649E2903C742000EB540 /* DropDown.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				D1DA671728EA21770096E6DF /* FirebaseDatabaseSwift */,
 				D1DA671928EA21770096E6DF /* FirebaseStorage */,
 				D1DA671B28EA21770096E6DF /* FirebaseStorageCombine-Community */,
+				D190649C2903C5CC000EB540 /* iOSDropDown */,
 			);
 			productName = DLibrary;
 			productReference = D11D53AA28CD56B1009162B1 /* DLibrary.app */;
@@ -406,6 +412,7 @@
 			packageReferences = (
 				D111DF7B28E1520600AFD8AE /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				D1DA671028EA21760096E6DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D190649B2903C5CB000EB540 /* XCRemoteSwiftPackageReference "iOSDropDown" */,
 			);
 			productRefGroup = D11D53AB28CD56B1009162B1 /* Products */;
 			projectDirPath = "";
@@ -571,6 +578,7 @@
 				D11D53B028CD56B1009162B1 /* SceneDelegate.swift in Sources */,
 				D197C8A128F7B00D008D7A42 /* RegisterNewBookViewController.swift in Sources */,
 				D1DA671E28EA2E670096E6DF /* LoginViewController.swift in Sources */,
+				D190649F2903C742000EB540 /* DropDown.swift in Sources */,
 				D15AE3EB28DF6913006FC18B /* SearchBooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,6 +941,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		D190649B2903C5CB000EB540 /* XCRemoteSwiftPackageReference "iOSDropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jriosdev/iOSDropDown.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 		D1DA671028EA21760096E6DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -948,6 +964,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D111DF7B28E1520600AFD8AE /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
+		};
+		D190649C2903C5CC000EB540 /* iOSDropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D190649B2903C5CB000EB540 /* XCRemoteSwiftPackageReference "iOSDropDown" */;
+			productName = iOSDropDown;
 		};
 		D1DA671128EA21770096E6DF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

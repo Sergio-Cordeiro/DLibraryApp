@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iOSDropDown
 import FirebaseStorage
 import FirebaseDatabase
 import ALCameraViewController
@@ -24,8 +25,8 @@ class RegisterNewBookViewController: UIViewController {
     
     @IBOutlet weak var bookNameTf: UITextField!
     @IBOutlet weak var numberOfPagesTf: UITextField!
-    @IBOutlet weak var bookType: UICornerableButton!
-    @IBOutlet weak var languageButton: UICornerableButton!
+    @IBOutlet weak var typeBook: DropDown!
+    @IBOutlet weak var languageBook: DropDown!
     @IBOutlet weak var bookDescription: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -41,11 +42,12 @@ class RegisterNewBookViewController: UIViewController {
         if let userUid = DLibraryManager.sharedInstance.user?.uid {
             userStorageRef = storageRef?.child("images/\(userUid)/")
         }
-        
         let tapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(imageTapped(tapGestureRecognizer:))
         )
+        typeBook.optionArray = ["Livro", "Revista"]
+        languageBook.optionArray = ["EN", "PT", "ES"]
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -156,7 +158,7 @@ class RegisterNewBookViewController: UIViewController {
     }
     
     private func returnBookType() -> String {
-        if bookType.currentTitle == "Revista" {
+        if typeBook.text == "Revista" {
             return "MAGAZINE"
         } else {
             return "BOOK"
@@ -168,7 +170,7 @@ class RegisterNewBookViewController: UIViewController {
     }
     
     private func returnLanguage() -> String {
-        return languageButton.currentTitle ?? "PT"
+        return languageBook.text ?? "PT"
     }
     
 }

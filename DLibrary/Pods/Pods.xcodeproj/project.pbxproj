@@ -102,7 +102,7 @@
 		8CFA83A5043660A1786CF3B06D276A91 /* Pods-DLibrary-DLibraryUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DLibrary-DLibraryUITests-umbrella.h"; sourceTree = "<group>"; };
 		99FA723A44A3C473E144076462D3C339 /* Pods-DLibrary-DLibraryUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DLibrary-DLibraryUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9B18F1D51C0E1DF3ED018C633E163DE9 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoLibraryViewController.swift; path = ALCameraViewController/ViewController/PhotoLibraryViewController.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E45014F02A4ADDE6E27F36194AD1E88 /* Pods-DLibrary-DLibraryUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DLibrary-DLibraryUITests-Info.plist"; sourceTree = "<group>"; };
 		A605210175788DC8AFFF072BACE229CE /* Pods-DLibrary-DLibraryUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DLibrary-DLibraryUITests.modulemap"; sourceTree = "<group>"; };
 		A9E01C2E66C1855AE3BEEDFF4F8B769F /* ALCameraViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALCameraViewController-prefix.pch"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		D824CECF036B56A78689B6653A1AC041 /* Pods-DLibraryTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DLibraryTests.modulemap"; sourceTree = "<group>"; };
 		DD3CDC78B09F723C39DBB13718C020BA /* PhotoLibraryAuthorizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoLibraryAuthorizer.swift; path = ALCameraViewController/Utilities/PhotoLibraryAuthorizer.swift; sourceTree = "<group>"; };
 		DD92F6C93890916E4D6372F78B99ECA9 /* Pods-DLibrary-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DLibrary-acknowledgements.plist"; sourceTree = "<group>"; };
-		EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALCameraViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ALCameraViewController; path = ALCameraViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8B195E1D41D5C4905D33AD298C9724 /* Pods-DLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DLibrary-dummy.m"; sourceTree = "<group>"; };
 		FD22D0EEB28922AECDD95A4A67287B98 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ALCameraViewController/Utilities/Utilities.swift; sourceTree = "<group>"; };
 		FFD19848553FCF1954EA8464D58E5A7B /* CameraGlobals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraGlobals.swift; path = ALCameraViewController/Utilities/CameraGlobals.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		94C62B321400C90FCFB09F4B559C2697 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController.framework */,
+				EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController */,
 				D3D1DA8FAFC501BF2BEE9F6554BF3FD3 /* Pods-DLibrary */,
 				0B28F669F4DAD0F227EA6173C07BB658 /* Pods-DLibrary-DLibraryUITests */,
 				6394D935E872D37CF75B4F9AAE4BB655 /* Pods-DLibraryTests */,
@@ -265,6 +265,7 @@
 				0B88529EDD2D58E925176AA060F58772 /* Resources */,
 				E8DFFB80D4D77DBE9B84DC62D97606A6 /* Support Files */,
 			);
+			name = ALCameraViewController;
 			path = ALCameraViewController;
 			sourceTree = "<group>";
 		};
@@ -379,7 +380,7 @@
 			);
 			name = ALCameraViewController;
 			productName = ALCameraViewController;
-			productReference = EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController.framework */;
+			productReference = EAFE620751F017A164ECE9CAA3FC056F /* ALCameraViewController */;
 			productType = "com.apple.product-type.framework";
 		};
 		8A0DB9852A0F092AED93319FD7DC0F4C /* Pods-DLibrary-DLibraryUITests */ = {
@@ -446,7 +447,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -651,7 +652,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -770,7 +770,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ALCameraViewController/ALCameraViewController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ALCameraViewController/ALCameraViewController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -825,7 +825,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -872,7 +871,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ALCameraViewController/ALCameraViewController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ALCameraViewController/ALCameraViewController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

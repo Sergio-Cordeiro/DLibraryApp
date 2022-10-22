@@ -122,17 +122,19 @@ class DescriptionBookViewController: UIViewController {
             
             if let imageBookLink: String  = book.images["thumbnail"] {
                 
-                let http = URL(string: imageBookLink)!
-                var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)!
-                comps.scheme = "https"
-                let https = comps.url!
-                
-                imageView.af.setImage(
-                                withURL: https,
-                                placeholderImage: UIImage(named: "Placeholder Image"),
-                                filter: nil,
-                                imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
-                                runImageTransitionIfCached: false) {_ in }
+                if let http = URL(string: imageBookLink) {
+                    var comps = URLComponents(url: http, resolvingAgainstBaseURL: false)
+                    comps?.scheme = "https"
+                    if let https = comps?.url {
+                        imageView.af.setImage(
+                                        withURL: https,
+                                        placeholderImage: UIImage(named: "Placeholder Image"),
+                                        filter: nil,
+                                        imageTransition: UIImageView.ImageTransition.crossDissolve(0.5),
+                                        runImageTransitionIfCached: false) {_ in }
+                    }
+                }
+               
             }
             
         }
