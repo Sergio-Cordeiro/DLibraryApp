@@ -26,6 +26,7 @@ class SearchBooksViewController: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         searchforFreeBooksSwith.isOn = false
+        hideKeyboardWhenTappedAround()
         loadBooks()
     }
 
@@ -79,6 +80,16 @@ class SearchBooksViewController: UIViewController {
     }
     
     //MARK: - Private methods
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
     
     private func loadBooks() {
         GoogleBooksProvider.getAllBooks { success,data in
